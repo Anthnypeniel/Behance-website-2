@@ -1,0 +1,76 @@
+import { useState } from 'react';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import profilePic from './path/to/your/logo.png'; // Update the path accordingly
+
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  return (
+    <main>
+      <div className="flex sm:justify-between items-center text-xl sm:max-w-full md:max-w-full gap-4 m-2 p-2">
+        {/* Logo */}
+        <img className="cursor-pointer w-12 h-12" src={profilePic} alt="logo" />
+
+        {/* Main Navigation & Buttons */}
+        <nav className="flex flex-row items-center justify-between w-full">
+          {/* Desktop Nav */}
+          <ul className="hidden md:flex gap-6 items-center">
+            <li><a href="#" className="hover:text-gray-600">About</a></li>
+            <li><a href="#" className="hover:text-gray-600">Services</a></li>
+            <li><a href="#" className="hover:text-gray-600">Projects</a></li>
+            <li><a href="#" className="hover:text-gray-600">Contact</a></li>
+          </ul>
+
+          {/* Hamburger Button for Mobile */}
+          <button onClick={toggleMenu} className="md:hidden">
+            <MenuIcon className="w-10 h-10 text-gray-800" />
+          </button>
+
+          {/* Auth Buttons (Desktop) */}
+          <div className="hidden md:flex gap-4 ml-auto">
+            <button className="px-4 py-2 border border-black rounded">Sign up</button>
+            <button className="px-4 py-2 bg-black text-white rounded-2xl">Sign in</button>
+          </div>
+        </nav>
+      </div>
+
+      {/* Mobile Drawer */}
+      <div
+        className={`fixed top-0 left-0 h-full w-1/2 bg-gray-100 shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
+        <div className="p-6 flex flex-col gap-6">
+          {/* Close Button */}
+          <div className="flex justify-end">
+            <CloseIcon
+              onClick={toggleMenu}
+              className="w-6 h-6 text-gray-800 cursor-pointer"
+            />
+          </div>
+
+          {/* Drawer Navigation */}
+          <nav className="flex flex-col gap-4 text-lg font-medium text-gray-700">
+            <a href="#" onClick={toggleMenu} className="hover:text-black">About</a>
+            <a href="#" onClick={toggleMenu} className="hover:text-black">Services</a>
+            <a href="#" onClick={toggleMenu} className="hover:text-black">Projects</a>
+            <a href="#" onClick={toggleMenu} className="hover:text-black">Contact</a>
+            <hr />
+            <button className="px-4 py-2 border border-black rounded w-full">Sign up</button>
+            <button className="px-4 py-2 bg-black text-white rounded-2xl w-full">Sign in</button>
+          </nav>
+        </div>
+      </div>
+
+      {/* Optional Overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/40 z-40 backdrop-blur-sm"
+          onClick={toggleMenu}
+        />
+      )}
+    </main>
+  );
+}
