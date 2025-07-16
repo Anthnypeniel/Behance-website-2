@@ -22,7 +22,7 @@ function heroFunc() {
            </p>
            <div className='flex gap-2 mt-9'>
                 <button className='pt-2 lg:px-10 lg:rounded-r-full lg:rounded-l-full lg:py-5 pb-2 pl-5 pr-5 rounded-2xl bg-black text-white cursor-pointer hover:bg-blue-950 '>Get Started</button>
-                <a href="#">
+                <a href="https://tailwindcss.com/docs/installation/using-vite">
                   <button className='border-none hover:underline cursor-pointer  rounded-2xl lg:px-10 lg:text-xl p-2 '>How it Works</button>
                 </a>
            </div>
