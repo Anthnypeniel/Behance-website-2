@@ -14,10 +14,10 @@ function NavBar({onServiceClick, onAboutClick}) {
  
 
     return(
-        <main>
-            <div className='flex sm:justify-between text-xl sm:max-w-full lg:max-lg:text-center lg:max-lg:mx-12 md:max-w-full gap-4 m-2 p-2 items-center'>
-                <img className='cursor-pointer *:' src={profilePic} alt="logo" />
-                <nav className='flex flex-row'>
+        <main className='' >
+            <div className='flex sm:justify-between justify-between  w-full text-sm lg:max-lg:text-center lg:max-lg:mx-12  gap-4 m-2 p-2 items-center'>
+                <img className='cursor-pointer ' src={profilePic} alt="logo" />
+                <nav className='flex flex-row  '>
                     <ul className='hidden md:flex gap-6 items-center md:justify-between '>
                         <li><a href="/node_modules">Home</a></li>
                         <li  onClick={onServiceClick} className='cursor-pointer' >services</li>
@@ -25,10 +25,10 @@ function NavBar({onServiceClick, onAboutClick}) {
                         <li><a href="#">Contact</a></li>
                     </ul>
                     <button onClick={toggleMenu}  className='md:hidden'>
-                        <MenuIcon className='w-10 h-10 ml-100' fontSize='large' />
+                        <MenuIcon className='w-10 h-10 ml-50 ' fontSize='large' />
                     </button>
                   
-                    <div className=' ml-40 md:gap-4 hidden w-[200px] md:flex justify-between'>
+                    <div className=' md:gap-4 hidden w-[200px] md:flex justify-between'>
                         <button className='basis-[150px] p-2' type='button'>sign up</button>
                         <button className='bg-black p-2 rounded-2xl flex basis-[150px] text-white r' type='submit'>sign in</button>
                     </div>

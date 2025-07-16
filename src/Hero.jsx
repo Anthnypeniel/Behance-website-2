@@ -3,7 +3,7 @@ import heroImg from './assets/Copy.jpg'
 function heroFunc() {
 
     return(
-    <main className="font-sans w-full max-w-max md:flex md:justify-between md:items-center  mt-8 p-2 m-2">
+    <main className="font-sans overflow-x-hidden w-full max-w-max md:flex md:justify-between md:items-center  mt-8 p-2 m-2">
         <div className='w-60%'>
           {/* <div className="">
             <p className="text-4xl md:text-6xl font-bold">12 <span className="text-2xl font-light ">years Experienced <br /> Automation</span></p>

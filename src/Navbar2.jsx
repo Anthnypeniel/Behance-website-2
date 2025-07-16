@@ -2,7 +2,7 @@ function midNav() {
 
     return(
         <>
-         <nav className="flex gap-6 mt-4  font-bold text-xl mb-10">
+         <nav className="flex  gap-6 mt-4  font-bold text-xl mb-10">
             <ul className="flex md:mx-auto lg:text-2xl lg:gap-18 lg:justify-evenly gap-5">
                 <li>
                     <a href="#">Google</a>
