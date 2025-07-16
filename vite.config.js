@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/Behance-website-2/',
   plugins: [
     tailwindcss(),
     react()],

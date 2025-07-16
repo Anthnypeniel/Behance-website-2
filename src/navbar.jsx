@@ -1,10 +1,9 @@
 import profilePic from './assets/beha.jpg';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-
 import { useState } from 'react';
 
-function NavBar() {
+function NavBar({onServiceClick, onAboutClick}) {
 
      const [isOpen, setIsOpen] = useState(false);
 
@@ -12,15 +11,17 @@ function NavBar() {
         setIsOpen(prevOpen => !prevOpen)
     }
 
+ 
+
     return(
         <main>
             <div className='flex sm:justify-between text-xl sm:max-w-full lg:max-lg:text-center lg:max-lg:mx-12 md:max-w-full gap-4 m-2 p-2 items-center'>
                 <img className='cursor-pointer *:' src={profilePic} alt="logo" />
                 <nav className='flex flex-row'>
                     <ul className='hidden md:flex gap-6 items-center md:justify-between '>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">About </a></li>
+                        <li><a href="/node_modules">Home</a></li>
+                        <li  onClick={onServiceClick} className='cursor-pointer' >services</li>
+                        <li  onClick={onAboutClick} className='cursor-pointer' >About</li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                     <button onClick={toggleMenu}  className='md:hidden'>
@@ -36,7 +37,7 @@ function NavBar() {
                 
             <div
               className={`fixed top-0 left-0 h-full w-full bg-gray-100 shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
-                isOpen ? 'translate-x-0' : 'translate-x-full'
+                isOpen ? 'translate-x-25' : 'translate-x-full'
               }`}
             >
               <div className="p-6 flex flex-col gap-6">
@@ -50,10 +51,10 @@ function NavBar() {
           
                 
                 <nav className="flex flex-col gap-4 text-lg font-medium text-gray-700">
-                  <a href="#" onClick={toggleMenu} className="hover:text-black">About</a>
-                  <a href="#" onClick={toggleMenu} className="hover:text-black">Services</a>
-                  <a href="#" onClick={toggleMenu} className="hover:text-black">Projects</a>
-                  <a href="#" onClick={toggleMenu} className="hover:text-black">Contact</a>
+                  <a  onClick={toggleMenu} className="hover:text-black">Home</a>
+                  <a  onClick={onServiceClick} className="hover:text-black">Services</a>
+                  <a  onClick={toggleMenu} className="hover:text-black">About</a>
+                  <a  onClick={toggleMenu} className="hover:text-black">Contact</a>
                   <hr />
                   <button className="px-4 py-2 border border-black rounded w-full">Sign up</button>
                   <button className="px-4 py-2 bg-black text-white rounded-2xl w-full">Sign in</button>

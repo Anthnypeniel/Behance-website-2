@@ -5,10 +5,11 @@ import {FaHeadset} from 'react-icons/fa';
 import { FaArrowRight } from 'react-icons/fa';
 
 
-function heroServices(){
+
+function heroServices({serviceRef}){
 
     return(
-        <section className="">
+        <section ref={serviceRef} className="">
             <div className="mb-4 md:text-center">
                 <h2 className="text-2xl font-lighter ">Our <span className="font-bold">Included </span> <br />
                     <span >Services</span>

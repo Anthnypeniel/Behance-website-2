@@ -1,10 +1,13 @@
 {
+  "homepage": "https://AnthnyPeniel.github.io/Behance-website-2/",
   "name": "vite-project",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -21,6 +24,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
+    "react-scroll": "^1.9.3",
     "tailwindcss": "^4.1.6"
   },
   "devDependencies": {

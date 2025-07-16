@@ -1,10 +1,10 @@
 import FooterImg from './assets/footImg.jpeg'
 
-function secFooter() {
+function secFooter({aboutRef}) {
 
 
     return(
-        <div className='md:flex mt-15 mb-15'>
+        <div ref={aboutRef} className='md:flex mt-15 mb-15'>
             <div className='md:flex md:items-center md:gap-7 md:w-full'>
                 <div className='md:w-[1200px] '>
                     <img className='mx-auto md:h-[600px]  md:w-[1000px] w-[900px] ' src={FooterImg} alt="" />
